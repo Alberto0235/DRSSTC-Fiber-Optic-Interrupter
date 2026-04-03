@@ -92,17 +92,15 @@ DRSSTC-Interrupter/
 │
 ├── Hardware/
 │   ├── KiCad/
-│   │   ├── Interrupter_V1.2.kicad_pro
-│   │   ├── Interrupter_V1.2.kicad_sch
-│   │   ├── Interrupter_V1.2.kicad_pcb
-│   │   └── Libraries/
+│   │   ├── Interrupter/              ← KiCad project files
+│   │   └── Libraries/                ← Additional libraries
 │   └── Exports/
-│       ├── Schematic_Interrupter_V1.2.pdf
-│       └── PCB_3D_Render_V1.2.png
+│       ├── Schematic_Interrupter_v1.2.pdf
+│       └── PCB_v1.2.png
 │
 ├── Fabrication/
 │   ├── Gerbers/
-│   ├── BOM_Interrupter_V1.2.csv
+│   ├── BOM_Interrupter_v1.2.csv
 │   └── InteractiveBOM.html
 │
 ├── Docs/
@@ -110,7 +108,7 @@ DRSSTC-Interrupter/
 │   │   ├── USB_90ohm_Differential.png
 │   │   └── FSMC_SDIO_50ohm_SingleEnded.png
 │   └── Stackup/
-│       └── JLCPCB_Stackup_Reference.pdf
+│       └── JLCPCB_Stackup_Reference.png
 │
 ├── Firmware/
 │   └── STM32CubeMX/
