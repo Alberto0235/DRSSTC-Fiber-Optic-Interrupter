@@ -128,7 +128,6 @@ DRSSTC-Interrupter/
 | **KiCad EDA** | 9.0 | Full schematic capture and 4-layer PCB layout |
 | **STM32CubeMX** | 6.16.0 | MCU peripheral configuration, clock tree, HAL code generation *(WIP)* |
 | **Saturn PCB Toolkit** | 8.39 | Controlled impedance calculation (90 Ω differential and 50 Ω single-ended) |
-| **JLCPCB Stackup** | — | Manufacturing stackup reference for impedance-matched routing |
 
 -----
 
