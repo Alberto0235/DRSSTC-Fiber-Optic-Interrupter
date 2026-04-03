@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP A6S-2104-H
+D 2 Way Surface Mount DIP Switch DP
+K
+F http://omronfs.omron.com/en_US/ecb/products/pdf/en-a6s.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model 100SP1T1B1M2REH
+#/706849/1086316/2.50/3/2/Switch
+DEF 100SP1T1B1M2REH S 0 30 Y Y 1 F N
+F0 "S" 750 300 50 H V L CNN
+F1 "100SP1T1B1M2REH" 750 200 50 H V L CNN
+F2 "100SP1T1B1M2REH" 750 100 50 H I L CNN
+F3 "https://configured-product-images.s3.amazonaws.com/2D/specs/100SP1T1B1M2REH.pdf" 750 0 50 H I L CNN
+F4 "TOGGLE, 0.4VA, 20VAC/VDC SPDT, On-On Panel Mount, Through Hole" 750 -100 50 H I L CNN "Description"
+F5 "28.19" 750 -200 50 H I L CNN "Height"
+F6 "612-100-A1122" 750 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/E-Switch/100SP1T1B1M2REH?qs=01kh3H%252BlXihCX4kaIcYj8A%3D%3D" 750 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "E-Switch" 750 -500 50 H I L CNN "Manufacturer_Name"
+F9 "100SP1T1B1M2REH" 750 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X NC 1 0 0 200 R 50 50 0 0 N
+X COM 2 0 -100 200 R 50 50 0 0 P
+X NO 3 0 -200 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 700 100 700 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

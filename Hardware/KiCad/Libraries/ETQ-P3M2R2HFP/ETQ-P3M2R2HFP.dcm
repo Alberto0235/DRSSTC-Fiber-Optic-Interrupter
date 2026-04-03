@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ETQ-P3M2R2HFP
+D Power Inductor (SMD),AEC-Q200, 2.2 H, 5.2 A, Shielded, 9 A, PCC-M0530M-H Series
+K
+F http://industrial.panasonic.com/cdbs/www-data/pdf/AGL0000/AGL0000C67.pdf
+$ENDCMP
+#
+#End Doc Library

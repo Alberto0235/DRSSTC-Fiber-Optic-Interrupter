@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 100SP1T1B1M2REH
+D TOGGLE, 0.4VA, 20VAC/VDC SPDT, On-On Panel Mount, Through Hole
+K
+F https://configured-product-images.s3.amazonaws.com/2D/specs/100SP1T1B1M2REH.pdf
+$ENDCMP
+#
+#End Doc Library
