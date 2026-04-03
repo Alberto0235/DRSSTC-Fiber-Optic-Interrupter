@@ -142,8 +142,3 @@ This project outlines a control board intended for use with high-voltage equipme
 
 **Alberto Marrone**
 MSc Student in Electronics Engineering — Politecnico di Milano
-
-<p align="left">
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-</p>
-
