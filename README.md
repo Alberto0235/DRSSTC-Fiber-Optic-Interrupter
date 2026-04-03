@@ -71,6 +71,10 @@ This section details some of the specific design choices made during the layout 
   <img src="Docs/Impedance_Calculations/USB_90ohm_Differential.png" width="600" alt="Saturn PCB USB Calculation">
 </p>
 
+| USB 2.0 (90 Ω Differential Target) | FSMC & SDIO (50 Ω Single-Ended Target) |
+| :---: | :---: |
+| <img src="Docs/Impedance_Calculations/USB_90ohm_Differential.png" alt="Saturn PCB USB" width="450"/> | <img src="Docs/Impedance_Calculations/FSMC_SDIO_50ohm_SingleEnded.png" alt="Saturn PCB SDIO" width="450"/> |
+
 ### 🧱 Stackup & Routing Strategy
 
   * **4-Layer Stackup:** Configured as `Signal+PWR` / `GND` / `GND` / `Signal+PWR`.
