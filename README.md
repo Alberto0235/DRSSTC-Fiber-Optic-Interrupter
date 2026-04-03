@@ -67,10 +67,6 @@ This section details some of the specific design choices made during the layout 
   * **FSMC & SDIO:** Routed at 50 Ω characteristic single-ended impedance. For the SDIO protocol, 33 Ω series termination resistors were placed as close as possible to the MCU source to suppress reflections.
   * **UART / External Header:** 100 Ω series resistors were added to the TX/RX lines near the connector. Since no TVS diodes were implemented at the silicon level for this header, these resistors provide a basic level of protection against spikes during manual probing or module connection.
 
-<p align="center">
-  <img src="Docs/Impedance_Calculations/USB_90ohm_Differential.png" width="600" alt="Saturn PCB USB Calculation">
-</p>
-
 | USB 2.0 (90 Ω Differential Target) | FSMC & SDIO (50 Ω Single-Ended Target) |
 | :---: | :---: |
 | <img src="Docs/Impedance_Calculations/USB_90ohm_Differential.png" alt="Saturn PCB USB" width="450"/> | <img src="Docs/Impedance_Calculations/FSMC_SDIO_50ohm_SingleEnded.png" alt="Saturn PCB SDIO" width="450"/> |
