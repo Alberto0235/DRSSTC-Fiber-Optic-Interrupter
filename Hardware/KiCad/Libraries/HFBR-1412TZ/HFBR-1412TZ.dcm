@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP HFBR-1412TZ
+D BROADCOM - HFBR-1412TZ - Fiber Optic Transmitter, Miniature Link, ST Port, 820 nm, 5 Mbaud, 1500 m, 100 mA, 1.84 V, 3.8 V
+K
+F https://docs.broadcom.com/docs/AV02-0176EN
+$ENDCMP
+#
+#End Doc Library
