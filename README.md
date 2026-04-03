@@ -29,8 +29,7 @@ Key features include:
 
 -----
 
-*(Inserisci qui un bel Render 3D della scheda fatto con Blender)*
-`![PCB Render](Hardware/Exports/PCB_3D_Render_V1.2.png)`
+![PCB Render](Hardware/Exports/PCB_v1.2.png)
 
 -----
 
