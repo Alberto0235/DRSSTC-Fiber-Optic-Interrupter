@@ -25,21 +25,9 @@ Key features include:
   * **Controlled-impedance routing** on USB, FSMC, and SDIO interfaces.
   * **Flexible power architecture** supporting USB-C bus power or an optional rechargeable battery (e.g., Samsung 30Q 3000mAh) via a dedicated charging IC and a 3.3V buck regulator.
 
-> **Status Note:** Currently, the hardware design is complete at the schematic and layout level. The board has not yet been manufactured, assembled, or tested. Building the prototype and developing the firmware (STM32CubeMX HAL + application layer) are the planned next steps.
-
 -----
 
 ![PCB Render](Hardware/Exports/PCB_v1.2.png)
-
-<p align="center">
-  <a href="Hardware/Exports/Schematic_Interrupter_v1.2.pdf">
-    <img src="https://img.shields.io/badge/View_Schematic-PDF-E34F26?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="Hardware/Exports/Schematic_Interrupter_v1.2.pdf"><kbd>📄 View the Full Schematic (PDF)</kbd></a>
-</p>
 
 > **Status Note:** Currently, the hardware design is complete at the schematic and layout level. The board has not yet been manufactured, assembled, or tested. Building the prototype and developing the firmware (STM32CubeMX HAL + application layer) are the planned next steps.
 > 
