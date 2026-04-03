@@ -31,6 +31,8 @@ Key features include:
 
 ![PCB Render](Hardware/Exports/PCB_v1.2.png)
 
+📄 **[Schematic (PDF)](Hardware/Exports/Schematic_Interrupter_v1.2.pdf)**
+
 -----
 
 ## 🔧 Key Specifications & Features
@@ -64,6 +66,10 @@ This section details some of the specific design choices made during the layout 
   * **USB 2.0 (Full Speed):** The D+/D− pair is routed as a 90 Ω differential pair, calculated using the Saturn PCB Toolkit. Intra-pair skew is minimized across the routing path.
   * **FSMC & SDIO:** Routed at 50 Ω characteristic single-ended impedance. For the SDIO protocol, 33 Ω series termination resistors were placed as close as possible to the MCU source to suppress reflections.
   * **UART / External Header:** 100 Ω series resistors were added to the TX/RX lines near the connector. Since no TVS diodes were implemented at the silicon level for this header, these resistors provide a basic level of protection against spikes during manual probing or module connection.
+
+<p align="center">
+  <img src="Docs/Impedance_Calculations/USB_90ohm_Differential.png" width="600" alt="Saturn PCB USB Calculation">
+</p>
 
 ### 🧱 Stackup & Routing Strategy
 
