@@ -37,6 +37,14 @@ Key features include:
   </a>
 </p>
 
+<p align="center">
+  <a href="Hardware/Exports/Schematic_Interrupter_v1.2.pdf"><kbd>📄 View the Full Schematic (PDF)</kbd></a>
+</p>
+
+> **Status Note:** Currently, the hardware design is complete at the schematic and layout level. The board has not yet been manufactured, assembled, or tested. Building the prototype and developing the firmware (STM32CubeMX HAL + application layer) are the planned next steps.
+> 
+> 🔗 **Explore the design:** [View the full Schematic (PDF)](Hardware/Exports/Schematic_Interrupter_v1.2.pdf)
+
 -----
 
 ## 🔧 Key Specifications & Features
