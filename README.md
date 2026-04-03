@@ -51,7 +51,7 @@ Key features include:
 | **USB Interface** | Full-speed USB 2.0 — 90 Ω differential impedance |
 | **Clock Source** | External 24 MHz crystal oscillator |
 | **User Interface** | Rotary encoders + tactile push buttons |
-| **External/Debug** | UART header (with 100 Ω series resistors) for debug or BT modules + Tag-Connect SWD |
+| **External/Debug** | UART header (with 100 Ω series resistors) for debug or additional modules + Tag-Connect SWD |
 | **Length Matching** | Applied on USB D+/D−, FSMC data/address bus, and SDIO data lines |
 | **Design Tool** | KiCad 9.0 |
 
