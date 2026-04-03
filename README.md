@@ -1,12 +1,12 @@
 # ⚡ DRSSTC Fiber-Optic Interrupter — V1.2
 
-\<p align="left"\>
-\<img src="[https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge\&logo=kicad\&logoColor=white](https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge&logo=kicad&logoColor=white)"/\>
-\<img src="[https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge\&logo=stmicroelectronics\&logoColor=white](https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge&logo=stmicroelectronics&logoColor=white)"/\>
-\<img src="[https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge](https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge)"/\>
-\<img src="[https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge\&logo=kicad\&logoColor=white](https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge&logo=kicad&logoColor=white)"/\>
-\<img src="[https://img.shields.io/badge/MCU-STM32F405-03234B?style=for-the-badge\&logo=stmicroelectronics\&logoColor=white](https://www.google.com/search?q=https://img.shields.io/badge/MCU-STM32F405-03234B%3Fstyle%3Dfor-the-badge%26logo%3Dstmicroelectronics%26logoColor%3Dwhite)"/\>
-\</p\>
+<p align="left">
+  <img src="https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge&logo=kicad&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge&logo=stmicroelectronics&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge&logo=kicad&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MCU-STM32F405VGT6-03234B?style=for-the-badge&logo=stmicroelectronics&logoColor=white"/>
+</p>
 
 -----
 
@@ -143,6 +143,6 @@ This project outlines a control board intended for use with high-voltage equipme
 **Alberto Marrone**
 MSc Student in Electronics Engineering — Politecnico di Milano
 
-\<p align="left"\>
-\<a href="INSERISCI\_QUI\_IL\_LINK\_LINKEDIN"\>\<img src="[https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)"/\>\</a\>
-\</p\>
+<p align="left">
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+</p>
