@@ -31,7 +31,11 @@ Key features include:
 
 ![PCB Render](Hardware/Exports/PCB_v1.2.png)
 
-📄 **[Schematic (PDF)](Hardware/Exports/Schematic_Interrupter_v1.2.pdf)**
+<p align="center">
+  <a href="Hardware/Exports/Schematic_Interrupter_v1.2.pdf">
+    <img src="https://img.shields.io/badge/View_Schematic-PDF-E34F26?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"/>
+  </a>
+</p>
 
 -----
 
