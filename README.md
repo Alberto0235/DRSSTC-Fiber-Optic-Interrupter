@@ -1,155 +1,148 @@
-# ⚡ DRSSTC Fiber-Optic Interrupter — V1.1
+# ⚡ DRSSTC Fiber-Optic Interrupter — V1.2
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge&logo=kicad&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge&logo=stmicroelectronics&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge&logo=kicad&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MCU-STM32F405VGT6-03234B?style=for-the-badge&logo=stmicroelectronics&logoColor=white"/>
-</p>
+\<p align="left"\>
+\<img src="[https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge\&logo=kicad\&logoColor=white](https://img.shields.io/badge/Hardware-Complete-brightgreen?style=for-the-badge&logo=kicad&logoColor=white)"/\>
+\<img src="[https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge\&logo=stmicroelectronics\&logoColor=white](https://img.shields.io/badge/Firmware-WIP-orange?style=for-the-badge&logo=stmicroelectronics&logoColor=white)"/\>
+\<img src="[https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge](https://img.shields.io/badge/PCB-4--Layer-blue?style=for-the-badge)"/\>
+\<img src="[https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge\&logo=kicad\&logoColor=white](https://img.shields.io/badge/KiCad-9.0-314CB0?style=for-the-badge&logo=kicad&logoColor=white)"/\>
+\<img src="[https://img.shields.io/badge/MCU-STM32F405-03234B?style=for-the-badge\&logo=stmicroelectronics\&logoColor=white](https://www.google.com/search?q=https://img.shields.io/badge/MCU-STM32F405-03234B%3Fstyle%3Dfor-the-badge%26logo%3Dstmicroelectronics%26logoColor%3Dwhite)"/\>
+\</p\>
 
----
+-----
 
 ## 📋 Project Summary
 
-This repository contains the complete hardware design for a **custom interrupter control board** built for a **Dual Resonant Solid State Tesla Coil (DRSSTC)**. The interrupter is the brain of the system — it generates the precisely timed gate drive pulses that modulate the Tesla Coil's output, controlling both the on-time and frequency of plasma arc generation.
+This repository contains the hardware design for a custom interrupter control board built for a Dual Resonant Solid State Tesla Coil (DRSSTC).
 
-The board operates in one of the most **electromagnetically hostile environments imaginable**: in the direct vicinity of a high-power resonant RF system radiating intense broadband EMI. Every design decision — from stackup selection and isolation strategy to impedance control and safety interlocking — was driven by this constraint.
+While the high-power driver is the "brain" of the system, the interrupter plays a fundamental role: it generates the PWM signal that is sent to the driver, which in turn generates the gate drive pulses to modulate the Tesla Coil's output.
 
-Key design pillars:
+Operating near a resonant RF system means dealing with significant EMI. To address this, the board relies on fiber optic transmitters to electrically isolate the control logic from the high-voltage side, alongside a controlled-impedance layout for high-speed digital interfaces and a hardware-level safety interlocking system.
 
-- 🛡️ **Total galvanic isolation** of all outputs via fiber optic transmitters, eliminating any conductive path between the control logic and the high-voltage coil
-- ⚙️ **Deterministic hardware safety chain** (E-brake) capable of cutting optical output power and halting MCU timers in hardware, independent of firmware state
-- 📐 **Controlled-impedance routing** on USB, FSMC, and SDIO interfaces, with length matching and crosstalk mitigation applied throughout
-- 🔋 **Flexible power architecture** supporting both USB-C bus power and a rechargeable battery, with a proper buck-regulated 3.3 V system rail
+Key features include:
 
-> **Target audience note:** Hardware design is complete and validated at schematic and layout level. Firmware development (STM32CubeMX HAL + application layer) is a planned next phase.
+  * **Total galvanic isolation** of the control outputs via 2-channel fiber optic transmitters.
+  * **Deterministic hardware safety chain** (E-brake) capable of cutting optical output power and halting MCU timers.
+  * **Controlled-impedance routing** on USB, FSMC, and SDIO interfaces.
+  * **Flexible power architecture** supporting USB-C bus power or an optional rechargeable battery (e.g., Samsung 30Q 3000mAh) via a dedicated charging IC and a 3.3V buck regulator.
 
----
+> **Status Note:** Currently, the hardware design is complete at the schematic and layout level. The board has not yet been manufactured, assembled, or tested. Building the prototype and developing the firmware (STM32CubeMX HAL + application layer) are the planned next steps.
+
+-----
+
+*(Inserisci qui un bel Render 3D della scheda fatto con Blender)*
+`![PCB Render](Hardware/Exports/PCB_3D_Render_V1.2.png)`
+
+-----
 
 ## 🔧 Key Specifications & Features
 
 | Parameter | Value / Detail |
 |---|---|
-| **MCU** | STM32F405VGT6 — ARM Cortex-M4F @ 168 MHz, LQFP-100 |
+| **MCU** | STM32F405VGT6 — ARM Cortex-M4 @ 168 MHz, LQFP-100 |
 | **PCB Layers** | 4-layer controlled-impedance stackup (JLCPCB JLC04161H-3313) |
-| **System Rail** | 3.3 V — generated by a dedicated synchronous buck converter |
-| **Power Input** | USB-C (bus power) **or** rechargeable Li-ion battery with dedicated protection + charging IC |
-| **Outputs** | Fully galvanically isolated fiber optic transmitters |
-| **Optical Rail** | Dedicated 3.3 V supply, physically controlled by the E-brake safety chain |
-| **Safety Chain** | Hardware E-brake: cuts optical rail power + triggers HW & SW interrupts to halt STM32 timers |
-| **Display Interface** | FSMC parallel bus — 50 Ω impedance-controlled traces |
-| **Storage** | SD card via SDIO — 50 Ω impedance-controlled traces |
-| **USB Interface** | Full-speed USB 2.0 — 90 Ω differential impedance, calculated and constrained in layout |
+| **System Rail** | 3.3 V — generated by a synchronous buck converter |
+| **Power Input** | USB-C (bus power) **or** Li-ion battery with protection + charging IC |
+| **Outputs** | 2x Galvanically isolated fiber optic transmitters |
+| **Optical Rail** | 3.3 V — Switched by a PMOS tied to the E-brake safety chain |
+| **Safety Chain** | Hardware E-brake: cuts PMOS power + triggers interrupts to halt STM32 timers |
+| **Display Interface** | FSMC parallel bus — 50 Ω impedance-controlled. Optimized for ER-TFT028A2-4. |
+| **Storage** | SD card via SDIO — 50 Ω impedance-controlled |
+| **USB Interface** | Full-speed USB 2.0 — 90 Ω differential impedance |
 | **Clock Source** | External 24 MHz crystal oscillator |
 | **User Interface** | Rotary encoders + tactile push buttons |
-| **Debug Interface** | UART header (series termination resistors fitted) + custom SWD connector |
+| **External/Debug** | UART header (with 100 Ω series resistors) for debug or BT modules + Tag-Connect SWD |
 | **Length Matching** | Applied on USB D+/D−, FSMC data/address bus, and SDIO data lines |
 | **Design Tool** | KiCad 9.0 |
-| **Firmware Status** | ⚠️ Work In Progress — HAL initialization via STM32CubeMX planned |
 
----
+-----
 
 ## 🏆 Hardware Engineering Highlights
 
-This section details the engineering decisions that go beyond basic functionality — the choices that determine whether a board works reliably in a real-world, high-stress environment.
+This section details some of the specific design choices made during the layout routing and stackup definition.
 
 ### 📡 Signal Integrity
 
-- **USB 2.0 — 90 Ω Differential Impedance Control:** The D+/D− pair is routed as a matched-impedance differential pair (Z_diff = 90 Ω), calculated using the Saturn PCB Toolkit against the JLC04161H-3313 stackup dielectric parameters. Trace width and gap were constrained as a net class rule in KiCad to prevent any DRC-passing violations.
-- **FSMC & SDIO — 50 Ω Single-Ended Impedance Control:** All high-speed parallel interface lines (FSMC data/address bus and SDIO data/clock lines) are routed at 50 Ω characteristic impedance, again derived from Saturn PCB Toolkit and enforced via KiCad net class constraints.
-- **Length Matching:** Intra-pair skew on the USB differential pair is minimized to < 150 mil mismatch. FSMC address/data lines and SDIO data lines are length-matched within each respective bus to control setup/hold timing margins.
-- **3W Rule for Crosstalk Mitigation:** Edge-to-edge spacing of at least 3× trace width (3W) is maintained on all high-speed signal layers to suppress inductive and capacitive crosstalk — critical given the broadband RF environment generated by the Tesla Coil resonant tank.
-- **Series Termination on UART Debug Header:** Source termination resistors are fitted on UART TX/RX lines at the MCU side to suppress reflections on the uncontrolled stub lengths present on a debug header.
+  * **USB 2.0 (Full Speed):** The D+/D− pair is routed as a 90 Ω differential pair, calculated using the Saturn PCB Toolkit. Intra-pair skew is minimized across the routing path.
+  * **FSMC & SDIO:** Routed at 50 Ω characteristic single-ended impedance. For the SDIO protocol, 33 Ω series termination resistors were placed as close as possible to the MCU source to suppress reflections.
+  * **UART / External Header:** 100 Ω series resistors were added to the TX/RX lines near the connector. Since no TVS diodes were implemented at the silicon level for this header, these resistors provide a basic level of protection against spikes during manual probing or module connection.
 
-### 🧱 Stackup & EMI Strategy
+### 🧱 Stackup & Routing Strategy
 
-- **4-Layer Stackup — JLC04161H-3313 (JLCPCB):** The stackup is configured as Signal / GND / PWR / Signal. Layer 2 (GND) acts as an unbroken reference plane for all high-speed signal routing on Layer 1, providing a controlled return current path and minimizing loop inductance.
-- **Dedicated Ground Planes:** A continuous, split-free GND plane is maintained under all high-speed interfaces. Power and signal domains are separated with careful attention to return current paths, preventing ground bounce from coupling between analog, digital, and power sections.
-- **Via Stitching:** Guard rings of stitching vias are placed around the board perimeter and between functional domains (power, logic, optical) to provide a low-impedance RF ground connection between Layer 1 copper pours and the Layer 2 GND plane, suppressing surface wave propagation.
-- **Optical Domain Isolation:** The fiber optic transmitter section is treated as a fully independent domain — separate supply rail, no shared copper between the digital logic ground and the transmitter side at DC level, with the fiber eliminating any return path at signal frequencies.
+  * **4-Layer Stackup:** Configured as `Signal+PWR` / `GND` / `GND` / `Signal+PWR`.
+  * **Return Paths:** Layers 2 and 3 provide solid, unbroken ground reference planes for the high-speed routing on the top and bottom layers.
+  * **Layer Transitions:** Whenever a high-speed signal transitions from Layer 1 to Layer 4, adjacent GND stitching vias were placed next to the signal via to ensure an uninterrupted return current path between the two ground planes.
 
-### 🔒 Safety Architecture
+-----
 
-The safety design is the most critical sub-system on this board and was treated as a first-class hardware concern — not a firmware afterthought.
+## 🔒 Safety Architecture
 
-- **Full Galvanic Isolation via Fiber Optics:** All gate drive command signals leave the board exclusively through fiber optic transmitters. There is zero conductive connection between the control circuitry and the Tesla Coil drive stage. This eliminates any risk of HV transients, ground loops, or common-mode EMI energy coupling back into the control board through the signal path.
-- **Dedicated Optical 3.3 V Rail:** The fiber optic transmitters are powered from a separate, independently regulated 3.3 V rail — not the main system rail. This ensures transmitter operation cannot be inadvertently affected by digital rail noise, and more importantly, allows the rail to be **physically cut** by the E-brake.
-- **E-brake / Safety Chain — Hardware-First Design:**
-  - The E-brake is a physical hardware interlock — a normally-open safety loop that must be actively maintained closed for the system to operate.
-  - **Action 1:** Tripping the E-brake immediately cuts power to the dedicated optical rail, physically de-energizing the fiber transmitters and guaranteeing zero output — completely independent of MCU state.
-  - **Action 2:** The same E-brake event simultaneously asserts a hardware interrupt line at the STM32, allowing the MCU to halt all timer outputs in the fastest possible IRQ context.
-  - **Action 3:** A software-level interrupt handler is also registered as a secondary redundant stop mechanism.
-  - This layered approach (physical power cut → hardware IRQ → software IRQ) ensures the system fails safe even in the case of a firmware hang, stack overflow, or runaway timer condition.
+  * **Galvanic Isolation:** The commands sent to the driver leave the board exclusively through the fiber optic transmitters. This prevents ground loops and high-voltage transients from traveling back into the control board logic.
+  * **Hardware E-brake Mechanism:**
+      * The E-brake relies on a physical button tied to GND.
+      * **Action 1 (Hardware):** Pressing the E-brake disconnects the GND path. This immediately switches off a PMOS on the 3.3V optical rail, physically de-energizing the fiber transmitters and guaranteeing zero output, completely independent of the microcontroller's state.
+      * **Action 2 (MCU IRQ):** The same physical event asserts a hardware interrupt on the STM32, halting the PWM timers in the fastest possible IRQ context.
+      * **Action 3 (Software IRQ):** A software-level handler serves as a secondary redundant stop mechanism.
 
----
+-----
 
 ## 📁 Repository Structure
 
-```
+```text
 DRSSTC-Interrupter/
 │
 ├── Hardware/
 │   ├── KiCad/
-│   │   ├── Interrupter.kicad_pro
-│   │   ├── Interrupter.kicad_sch
-│   │   ├── Interrupter.kicad_pcb
+│   │   ├── Interrupter_V1.2.kicad_pro
+│   │   ├── Interrupter_V1.2.kicad_sch
+│   │   ├── Interrupter_V1.2.kicad_pcb
 │   │   └── Libraries/
-│   │       ├── Interrupter.kicad_sym
-│   │       └── Interrupter.pretty/
 │   └── Exports/
-│       ├── Schematic_Interrupter_V1.1.pdf
-│       └── PCB_3D_Render_V1.1.png
+│       ├── Schematic_Interrupter_V1.2.pdf
+│       └── PCB_3D_Render_V1.2.png
 │
 ├── Fabrication/
 │   ├── Gerbers/
-│   ├── Drill/
-│   ├── BOM_Interrupter_V1.1.csv
-│   └── CPL_Interrupter_V1.1.csv
+│   ├── BOM_Interrupter_V1.2.csv
+│   └── InteractiveBOM.html
 │
 ├── Docs/
 │   ├── Impedance_Calculations/
-│   │   ├── USB_90ohm_Differential.pdf
-│   │   └── FSMC_SDIO_50ohm_SingleEnded.pdf
-│   ├── Stackup/
-│   │   └── JLC04161H-3313_Stackup_Parameters.pdf
-│   └── Safety_Architecture/
-│       └── Ebrake_Signal_Chain.md
+│   │   ├── USB_90ohm_Differential.png
+│   │   └── FSMC_SDIO_50ohm_SingleEnded.png
+│   └── Stackup/
+│       └── JLCPCB_Stackup_Reference.pdf
 │
 ├── Firmware/
 │   └── STM32CubeMX/
-│       └── Interrupter.ioc          ← Peripheral configuration (WIP)
+│       └── Interrupter.ioc           ← Peripheral configuration (WIP)
 │
 └── README.md
 ```
 
----
+-----
 
 ## 🛠️ Tools Used
 
 | Tool | Version | Purpose |
 |---|---|---|
 | **KiCad EDA** | 9.0 | Full schematic capture and 4-layer PCB layout |
-| **STM32CubeMX** | Latest | MCU peripheral configuration, clock tree, HAL code generation *(WIP)* |
-| **Saturn PCB Toolkit** | Latest | Controlled impedance calculation — trace width/gap for 90 Ω differential and 50 Ω single-ended targets |
-| **JLCPCB Stackup (JLC04161H-3313)** | — | Manufacturing stackup reference for impedance-matched routing |
-| **LTspice** | XVII | Power supply rail analysis and transient simulations |
+| **STM32CubeMX** | 6.16.0 | MCU peripheral configuration, clock tree, HAL code generation *(WIP)* |
+| **Saturn PCB Toolkit** | 8.39 | Controlled impedance calculation (90 Ω differential and 50 Ω single-ended) |
+| **JLCPCB Stackup** | — | Manufacturing stackup reference for impedance-matched routing |
 
----
+-----
 
 ## ⚠️ Disclaimer
 
-This project involves the design and construction of high-voltage, high-power equipment capable of generating potentially lethal electrical discharges. All hardware documentation in this repository is provided **for educational and portfolio purposes only**. The author assumes no liability for any damage, injury, or loss resulting from the use or misuse of this material. If you are replicating this design, ensure you have appropriate knowledge, safety equipment, and respect for high-voltage hazards.
+This project outlines a control board intended for use with high-voltage equipment capable of generating potentially lethal electrical discharges. All hardware documentation in this repository is provided **for educational and portfolio purposes only**. The author assumes no liability for any damage, injury, or loss resulting from the use or misuse of this material.
 
----
+-----
 
 ## 👤 Author
 
 **Alberto Marrone**
-MSc Electronics Engineering — Politecnico di Milano
-Cadence Student Ambassador | Power Electronics & High-Speed PCB Design
+MSc Student in Electronics Engineering — Politecnico di Milano
 
-<p align="left">
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  <a href="https://github.com/YOUR-GITHUB"><img src="https://img.shields.io/badge/GitHub-Portfolio-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-</p>
+\<p align="left"\>
+\<a href="INSERISCI\_QUI\_IL\_LINK\_LINKEDIN"\>\<img src="[https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)"/\>\</a\>
+\</p\>
