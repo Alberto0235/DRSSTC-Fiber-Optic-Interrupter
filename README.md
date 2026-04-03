@@ -46,7 +46,7 @@ Key features include:
 | **Outputs** | 2x Galvanically isolated fiber optic channels (Dual-footprint: HFBR-1412TZ or IF E97) |
 | **Optical Rail** | 3.3 V — Switched by a PMOS tied to the E-brake safety chain |
 | **Safety Chain** | Hardware E-brake: cuts PMOS power + triggers interrupts to halt STM32 timers |
-| **Display Interface** | FSMC 16-bit 8080 Mode I — 50 Ω impedance-controlled. Target display: ER-TFT028A2-4 (IM3=0, IM2=0, IM1=0, IM0=1). |
+| **Display Interface** | FSMC 16-bit 8080 Mode — 50 Ω impedance-controlled. Target display: ER-TFT028A2-4 (IM3=0, IM2=0, IM1=0, IM0=1). |
 | **Storage** | SD card via SDIO — 50 Ω impedance-controlled |
 | **USB Interface** | Full-speed USB 2.0 — 90 Ω differential impedance |
 | **Clock Source** | External 24 MHz crystal oscillator |
