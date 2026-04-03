@@ -27,7 +27,7 @@ Key features include:
 
 -----
 
-![PCB Render](Hardware/Exports/PCB_v1.2.png)
+![PCB Render](Hardware/Exports/PCB_Interrupter_v1.2.png)
 
 > **Status Note:** Currently, the hardware design is complete at the schematic and layout level. The board has not yet been manufactured, assembled, or tested. Building the prototype and developing the firmware (STM32CubeMX HAL + application layer) are the planned next steps.
 > 
