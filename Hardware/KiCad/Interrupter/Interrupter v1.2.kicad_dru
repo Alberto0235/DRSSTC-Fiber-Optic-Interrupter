@@ -1,0 +1,7 @@
+(version 1)
+(rule "Rule_3W_USB"
+  (condition "A.NetClass == 'USB_90' && B.Type == 'Zone'")
+  (constraint clearance (min 0.45mm)))
+(rule "Rule_3W_50Ohm"
+  (condition "(A.NetClass == 'SDIO_50' || A.NetClass == 'FSMC_50') && B.Type == 'Zone'")
+  (constraint clearance (min 0.54mm)))
